@@ -1,0 +1,9 @@
+version: '3' # version of docker compose to use
+services: # using docker compose the services automatically get access to each other
+    anaconda: #name of the service
+        restart: always # restart policies
+        build: . #look in the current directory for a dockerfile
+        ports: # ports to open in the container
+            - "8888:8888" # port in local machine : port in docker container
+        volumes:
+            - ~/jupyter:/opt/notebooks
